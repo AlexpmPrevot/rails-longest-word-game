@@ -1,0 +1,16 @@
+<h1>Result</h1>
+<br>
+
+<% if (@user_word.split('') & @rand.split(', ')) == @user_word.split('') %>
+  <% if @api_result['found'] == true %>
+     <p><%=  "Congratulations! #{@results} is a valid English word!" %></p>
+  <% else %>
+      <p><%= "Sorry but #{@user_word} doesn't seem to be an english word" %></p>
+  <% end %>
+<%else %>
+    <p><%= "Sorry but #{@user_word} can't be built out of #{@rand}." %></p>
+<% end %>
+
+
+
+<%= link_to "Play again", new_path %>
